@@ -7,11 +7,16 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    padding: 10px;
+    font-size: 36px;
+  }
 `;
 
 export const Content = styled.div`
   width: 100%;
-  max-width: 315px;
+  max-width: 280px;
   text-align: center;
   form {
     display: flex;

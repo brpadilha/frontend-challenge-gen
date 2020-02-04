@@ -17,6 +17,7 @@ export default function SignUp() {
   });
   return (
     <>
+      <h1>GenBank</h1>
       <img src={logo} alt="GenBank" />
 
       <Form schema={schema}>
