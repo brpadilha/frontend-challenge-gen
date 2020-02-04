@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
 
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
+import SignIn from '~/pages/SignIn';
+import SignUp from '~/pages/SignUp';
 
-import Dashboard from '../pages/Dashboard/indedx';
-import Transactions from '../pages/Transactions';
+import Dashboard from '~/pages/Dashboard/indedx';
+import Transactions from '~/pages/Transactions';
 
 export default function Routes() {
   return (
