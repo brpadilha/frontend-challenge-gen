@@ -8,9 +8,15 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
+  img {
+    border-radius: 8px;
+  }
+
   h1 {
-    padding: 10px;
     font-size: 36px;
+  }
+  h2 {
+    padding: 10px;
   }
 `;
 
