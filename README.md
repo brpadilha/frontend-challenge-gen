@@ -24,7 +24,7 @@ This project is the front end of [this](https://github.com/brpadilha/backend-cha
 - Route to show transactions;
 - Filter for clients and transactions;
 
-### Different featues
+### Different features
 
 - I create a login that only managers can log in the app, it is controlled by token [jwt]('https://jwt.io/');
 - Create a log out of the app.;
@@ -32,7 +32,7 @@ This project is the front end of [this](https://github.com/brpadilha/backend-cha
 
 # Why?
 
-This project is a part of my portfolio, that I wanted to improve my skills in resolving problems, create APIs and Apps. I will be happy if you provide me any feedback about this project, anything that you can report, cam make me a better developer!
+This project is a part of my portfolio, that I wanted to improve my skills in resolving problems, create APIs and Apps. I will be happy if you provide me any feedback about this project, anything that you can report, can make me a better developer!
 
 Email-me: brpadilha.dev@gmail.com
 
