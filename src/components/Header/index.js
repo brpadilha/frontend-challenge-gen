@@ -1,32 +1,38 @@
 import React from 'react';
-
-// import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Button, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import logo from '~/assets/logo.svg';
+import { signOut } from '~/store/modules/auth/actions';
 
-import { Container, Content, Profile } from './styles';
+import { Container, Content } from './styles';
+const { confirm } = Modal;
 
 export default function Header() {
-  // const profile = useSelector(state => state.client.profile);
+  const dispatch = useDispatch();
+
+  function showConfirm() {
+    confirm({
+      title: 'Attention',
+      content: 'Do you want log out? Click ok for yes.',
+      onOk() {
+        dispatch(signOut(showConfirm));
+      },
+      onCancel() {},
+    });
+  }
   return (
     <Container>
       <Content>
         <nav>
           <img src={logo} alt="GenBank" />
-          <Link to="/transactions">Transactions</Link>
-
           <Link to="/clients">Clients</Link>
+          <Link to="/transactions">Transactions</Link>
         </nav>
         <aside>
-          <Profile>
-            <div>
-              <strong>Bruno</strong>
-            </div>
-            <img
-              src="https://api.adorable.io/avatars/50/abott@adorable.png"
-              alt="Bruno"
-            />
-          </Profile>
+          <Button type="danger" onClick={showConfirm}>
+            Log Out
+          </Button>
         </aside>
       </Content>
     </Container>

@@ -1,5 +1,6 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
-import { toast } from 'react-toastify';
+import { message } from 'antd';
+
 import history from '~/services/history';
 import api from '~/services/api';
 
@@ -17,17 +18,18 @@ export function* signIn({ payload }) {
     const { token, client } = response.data;
 
     if (!client.manager) {
-      toast.error('User is not a manager');
+      message.error('User is not a manager', 3);
+      yield put(signFailure());
       return;
     }
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, client));
-    toast.success(`Welcome ${client.name} !`);
-    history.push('/transactions');
+    message.success(`Welcome ${client.name} !`);
+    history.push('/clients');
   } catch (error) {
-    toast.error('User authentication failure. Review your CPF or Password');
+    message.error('User authentication failure. Review your CPF or Password', 3);
     yield put(signFailure());
   }
 }
@@ -42,10 +44,10 @@ export function* signUp({ payload }) {
       password,
       manager: true,
     });
-    toast.success('User successfully registered');
+    message.success('User successfully registered');
     history.push('/');
   } catch (error) {
-    toast.error('Fail to register the user, check the data');
+    message.error('Fail to register the user, check the data', 3);
     yield put(signFailure());
   }
 }
@@ -60,8 +62,13 @@ export function setToken({ payload }) {
   }
 }
 
+export function signOut() {
+  history.push('/');
+}
+
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('@auth/SIGN_OUT', signOut),
 ]);
