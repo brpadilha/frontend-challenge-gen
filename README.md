@@ -1,12 +1,20 @@
 # GenBank - Front-end React Challenge
 
-![site](src/assets/web.gif 'web')
+![site](src/assets/web.gif)
+
+![SignIn](src/assets/signIn.png)
+
+![SignUp](src/assets/SignUp.png)
+
+![Clients](src/assets/Clients.png)
+
+![Dashboard](src/assets/Dashboard.png)
 
 # About this project
 
 This is a react project made to resolve [this](https://github.com/lucasfonmiranda/gen-careers) frontend challenge.
 
-## Project resume
+# Project description
 
 This project is the front end of [this](https://github.com/brpadilha/backend-challenge-gen) backend, where the manager of the bank, have a route that shows the Clients of the bank and a route that shows the transactions, where he can filter by Client name that made transactions and filter by type of the transaction.
 
